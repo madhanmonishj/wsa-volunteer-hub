@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: volunteer-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: volunteer-app
+  template:
+    metadata:
+      labels:
+        app: volunteer-app
+    spec:
+      containers:
+      - name: volunteer-app
+        ports:
+        - containerPort: 8081
